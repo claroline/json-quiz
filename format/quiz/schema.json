@@ -130,6 +130,11 @@
           "type": "boolean",
           "default": false,
           "description": "It is mandatory to answer the questions to continue the quiz"
+        },
+        "answersEditable": {
+          "type": "boolean",
+          "default": true,
+          "description": "The answers of a step can be edited after the step has been validated"
         }
       }
     },
