@@ -11,13 +11,6 @@
     "description": {
       "type": "string"
     },
-    "meta": {
-      "allOf": [
-        {
-          "$ref": "http://json-quiz.github.io/json-quiz/schemas/metadata/schema.json"
-        }
-      ]
-    },
     "parameters": {
       "type": "object",
       "properties": {

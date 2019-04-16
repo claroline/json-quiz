@@ -30,10 +30,6 @@ describe('Quiz', function () {
       it('may have a *parameters* property', function () {
         assert.isValid('with-parameters');
       });
-
-      it('may have a *meta* property', function () {
-        assert.isValid('quiz-metadata');
-      });
     });
 
     describe('The *id* property', function () {
@@ -81,21 +77,11 @@ describe('Quiz', function () {
         });
       });
     });
-
-    describe('The *meta* property', function () {
-      it('must satisfy the #metadata# schema', function () {
-        assert.hasErrors('meta-not-satisfying-metadata-schema', {
-          '.meta.authors': 'should be array',
-          '.meta.license': 'should be string'
-        });
-      });
-    });
   });
 
   describe('Examples', function () {
     assert.areValid([
       'content-and-question-steps',
-      'quiz-metadata',
       'with-parameters',
       'with-tag-picking',
       'with-steps-picking'
