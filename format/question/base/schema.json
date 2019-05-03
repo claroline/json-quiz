@@ -20,6 +20,11 @@
       "type": "string",
       "description": "Supplementary information about the question"
     },
+    "hasExpectedAnswers": {
+      "type": "boolean",
+      "default": true,
+      "description": "Defines if the question has correct and incorrect answers for evaluation purpose"
+    },
     "meta": {
       "allOf": [
         {
@@ -79,7 +84,7 @@
           "type": "object",
           "properties": {
             "type": {
-              "enum": ["sum"]
+              "enum": ["none", "sum"]
             }
           },
           "required": ["type"]
