@@ -14,39 +14,19 @@
     "score": {
       "oneOf": [
         {
-          "type": "object",
-          "properties": {
-            "type": {
-              "enum": [
-                "none",
-                "sum"
-              ]
-            }
-          },
-          "required": [
-            "type"
-          ]
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/fixed/schema.json"
         },
         {
-          "type": "object",
-          "properties": {
-            "type": {
-              "enum": [
-                "fixed"
-              ]
-            },
-            "success": {
-              "type": "number"
-            },
-            "failure": {
-              "type": "number"
-            }
-          },
-          "required": [
-            "type",
-            "success",
-            "failure"
-          ]
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/manual/schema.json"
+        },
+        {
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/none/schema.json"
+        },
+        {
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/rules/schema.json"
+        },
+        {
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/sum/schema.json"
         }
       ]
     },

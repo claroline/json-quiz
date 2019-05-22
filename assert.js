@@ -12,6 +12,12 @@ var resolved = {
   'content': 'content',
   'hint': 'hint',
   'category': 'category',
+  'base-score': 'score/base',
+  'fixed-score': 'score/fixed',
+  'manual-score': 'score/manual',
+  'none-score': 'score/none',
+  'rules-score': 'score/rules',
+  'sum-score': 'score/sum',
   'base-question': 'question/base',
   'choice-answer': 'answer-data/choice',
   'choice-question': 'question/choice',
@@ -125,7 +131,7 @@ function makeAsserters(schemaId) {
       var filePath = 'valid/' + exampleName + '.json';
       var errors = validateAndNormalizeErrors(_schemaId, filePath);
       var errorsAsString = '(errors: ' + JSON.stringify(errors) + ')';
-      assert.deepEqual(errors, [], 'Validation was not supposed to return any errors for "' + exampleName + '" ' + errorsAsString);
+      assert.deepStrictEqual(errors, {}, 'Validation was not supposed to return any errors for "' + exampleName + '" ' + errorsAsString);
     },
     areValid: function (exampleNames) {
       var self = this;
