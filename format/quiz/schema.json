@@ -11,6 +11,45 @@
     "description": {
       "type": "string"
     },
+    "score": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "none",
+                "sum"
+              ]
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "fixed"
+              ]
+            },
+            "success": {
+              "type": "number"
+            },
+            "failure": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "type",
+            "success",
+            "failure"
+          ]
+        }
+      ]
+    },
     "parameters": {
       "type": "object",
       "properties": {
@@ -107,12 +146,6 @@
           "type": "boolean",
           "description": "Display immediate feedback about his answer to the user",
           "default": false
-        },
-        "totalScoreOn": {
-          "type": "number",
-          "minimum": 0,
-          "description": "If this value is greater than 0 we should compute the score based on the value, else it will be computed based on the sum of all questions score",
-          "default": 0
         },
         "numbering": {
           "enum": ["none", "litteral", "numeric"],
