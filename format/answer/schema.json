@@ -80,7 +80,7 @@
         {
           "$ref": "http://json-quiz.github.io/json-quiz/schemas/answer-data/selection/schema.json"
 	    },
-	    {
+        {
           "$ref": "http://json-quiz.github.io/json-quiz/schemas/answer-data/boolean/schema.json"
         },
 	    {

@@ -20,6 +20,11 @@
       "type": "string",
       "description": "Supplementary information about the question"
     },
+    "hasExpectedAnswers": {
+      "type": "boolean",
+      "default": true,
+      "description": "Defines if the question has correct and incorrect answers for evaluation purpose"
+    },
     "meta": {
       "allOf": [
         {
@@ -76,88 +81,19 @@
     "score": {
       "oneOf": [
         {
-          "type": "object",
-          "properties": {
-            "type": {
-              "enum": ["sum"]
-            }
-          },
-          "required": ["type"]
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/fixed/schema.json"
         },
         {
-          "type": "object",
-          "properties": {
-            "type": {
-              "enum": ["fixed"]
-            },
-            "success": {
-              "type": "number"
-            },
-            "failure": {
-              "type": "number"
-            }
-          },
-          "required": ["type", "success", "failure"]
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/manual/schema.json"
         },
         {
-          "type": "object",
-          "properties": {
-            "type": {
-              "enum": ["manual"]
-            },
-            "max": {
-              "type": "number"
-            }
-          },
-          "required": ["type", "max"]
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/none/schema.json"
         },
         {
-          "type": "object",
-          "properties": {
-            "type": {
-              "enum": ["rules"]
-            },
-            "noWrongChoice": {
-              "type": "boolean",
-              "default": false
-            },
-            "rules": {
-              "type": "array",
-              "minItems": 1,
-              "uniqueItems": false,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "type": {
-                    "type": "string"
-                  },
-                  "source": {
-                    "type": "string"
-                  },
-                  "count": {
-                    "type": "number"
-                  },
-                  "countMin": {
-                    "type": "number"
-                  },
-                  "countMax": {
-                    "type": "number"
-                  },
-                  "points": {
-                    "type": "number"
-                  },
-                  "target": {
-                    "type": "string"
-                  }
-                },
-                "required": ["id", "type", "source", "points", "target"]
-              }
-            }
-          },
-          "required": ["type", "rules"]
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/rules/schema.json"
+        },
+        {
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/sum/schema.json"
         }
       ]
     }

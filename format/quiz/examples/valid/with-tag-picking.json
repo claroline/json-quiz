@@ -11,6 +11,9 @@
     "created": "2015-06-04",
     "license": "CC"
   },
+  "score": {
+    "type": "sum"
+  },
   "parameters": {
     "type": "summative",
     "anonymizeAttempts": false,
@@ -24,8 +27,7 @@
     "showFullCorrection": true,
     "showCorrectionAt": "validation",
     "showScoreAt": "correction",
-    "showFeedback": true,
-    "totalScoreOn": 0
+    "showFeedback": true
   },
   "picking": {
     "type": "tags",
