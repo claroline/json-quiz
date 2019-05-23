@@ -11,6 +11,25 @@
     "description": {
       "type": "string"
     },
+    "score": {
+      "oneOf": [
+        {
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/fixed/schema.json"
+        },
+        {
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/manual/schema.json"
+        },
+        {
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/none/schema.json"
+        },
+        {
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/rules/schema.json"
+        },
+        {
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/score/sum/schema.json"
+        }
+      ]
+    },
     "parameters": {
       "type": "object",
       "properties": {
@@ -108,12 +127,6 @@
           "description": "Display immediate feedback about his answer to the user",
           "default": false
         },
-        "totalScoreOn": {
-          "type": "number",
-          "minimum": 0,
-          "description": "If this value is greater than 0 we should compute the score based on the value, else it will be computed based on the sum of all questions score",
-          "default": 0
-        },
         "numbering": {
           "enum": ["none", "litteral", "numeric"],
           "description": "The question numbering",
@@ -128,6 +141,11 @@
           "type": "boolean",
           "default": true,
           "description": "The answers of a step can be edited after the step has been validated"
+        },
+        "hasExpectedAnswers": {
+          "type": "boolean",
+          "default": true,
+          "description": "Defines if the quiz has correct and incorrect answers for evaluation purpose"
         }
       }
     },
