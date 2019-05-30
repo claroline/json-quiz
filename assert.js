@@ -44,6 +44,8 @@ var resolved = {
   'ordering-answer': 'answer-data/ordering',
   'boolean-question': 'question/boolean',
   'boolean-answer': 'answer-data/boolean',
+  'waveform-question': 'question/waveform',
+  'waveform-answer': 'answer-data/waveform',
   'answer': 'answer',
   'step': 'step',
   'quiz': 'quiz',
