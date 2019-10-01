@@ -42,7 +42,7 @@
             "application/x.waveform+json"
           ]
         },
-        "url": {
+        "file": {
           "type": "string"
         },
         "tolerance": {
@@ -75,7 +75,7 @@
           }
         }
       },
-      "required": ["url"]
+      "required": ["file"]
     }
   ]
 }
