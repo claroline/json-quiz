@@ -37,6 +37,24 @@
         }
       },
       "required": ["url"]
+    },
+    "resource": {
+      "type": "object",
+      "properties": {
+        "resource": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "slug": {
+              "type": "string"
+            }
+          },
+          "required": ["id", "slug"]
+        }
+      },
+      "required": ["resource"]
     }
   },
   "allOf": [
@@ -50,6 +68,9 @@
         },
         {
           "$ref": "http://json-quiz.github.io/json-quiz/schemas/content/schema.json#/definitions/distant"
+        },
+        {
+          "$ref": "http://json-quiz.github.io/json-quiz/schemas/content/schema.json#/definitions/resource"
         }
       ]
     }
